@@ -15,11 +15,11 @@ yarn dev
 
 This part of the guide focuses on how to render Frames within your application, making the frames interactive and visually integrated. It includes:
 
-- **Validating frame URL**: The validation of frame URLs is performed using a regular expression to identify URLs within the message content. Once a URL is identified, it's processed to extract metadata, including frame information.
+- **[Validating frame URL](https://xmtp.org/docs/tutorials/render-frames)**: The validation of frame URLs is performed using a regular expression to identify URLs within the message content. Once a URL is identified, it's processed to extract metadata, including frame information.
 
-- **Rendering Frames**: Frames are rendered by dynamically creating a `Frame` component based on the extracted frame information. This component is responsible for displaying the frame's content, including images, titles, and interactive buttons.
+- **[Rendering Frames](https://xmtp.org/docs/tutorials/render-frames)**: Frames are rendered by dynamically creating a `Frame` component based on the extracted frame information. This component is responsible for displaying the frame's content, including images, titles, and interactive buttons.
 
-- **Sign XMTP Payload**: Use `@xmtp/frames-client` to sign and send frame actions securely. This package facilitates interoperable communication by ensuring that messages are securely signed and verifiable.
+- **[Sign XMTP Payload](https://xmtp.org/docs/tutorials/render-frames)**: Use `@xmtp/frames-client` to sign and send frame actions securely. This package facilitates interoperable communication by ensuring that messages are securely signed and verifiable.
 
 ## Other resources
 
