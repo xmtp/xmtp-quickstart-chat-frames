@@ -70,25 +70,35 @@ const MessageItem = ({
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    if (typeof message.content === "string") {
-      const words = message.content.split(/(\r?\n|\s+)/);
-      const urlRegex =
-        /^(http[s]?:\/\/)?([a-z0-9.-]+\.[a-z0-9]{1,}\/.*|[a-z0-9.-]+\.[a-z0-9]{1,})$/i;
+    const fetchMetadata = async () => {
+      setIsLoading(true);
+      //Render localhost frames
+      /*if (message.content.includes("localhost")) {
+        const metadata = await readMetadata(message.content); // Ensure you have implemented this function
+        if (metadata) {
+          setFrameMetadata(metadata);
+        }
+      }*/
+      if (typeof message.content === "string") {
+        const words = message.content.split(/(\r?\n|\s+)/);
+        const urlRegex =
+          /^(http[s]?:\/\/)?([a-z0-9.-]+\.[a-z0-9]{1,}\/.*|[a-z0-9.-]+\.[a-z0-9]{1,})$/i;
 
-      void Promise.all(
-        words.map(async (word) => {
-          const isUrl = !!word.match(urlRegex)?.[0];
-          if (isUrl) {
-            const metadata = await readMetadata(word); // Ensure you have implemented this function
-            if (metadata) {
-              setFrameMetadata(metadata);
+        await Promise.all(
+          words.map(async (word) => {
+            const isUrl = !!word.match(urlRegex)?.[0];
+            if (isUrl) {
+              const metadata = await readMetadata(word); // Ensure you have implemented this function
+              if (metadata) {
+                setFrameMetadata(metadata);
+              }
             }
-          }
-        }),
-      );
-    }
-    setIsLoading(false);
+          }),
+        );
+      }
+      setIsLoading(false);
+    };
+    fetchMetadata();
   }, [message?.content]);
 
   const styles = {
