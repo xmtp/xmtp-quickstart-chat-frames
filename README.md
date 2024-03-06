@@ -2,6 +2,10 @@
 
 ![xmtp](https://github.com/xmtp/xmtp-quickstart-reactjs/assets/1447073/3f2979ec-4d13-4c3d-bf20-deab3b2ffaa1)
 
+<video controls src="https://github.com/fabriguespe/xmtp-quickstart-frames/assets/1447073/adf38f79-703c-4759-8523-4feb0ebb2d0e" width="100%" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 ## Installation
 
 ```bash
@@ -10,10 +14,6 @@ yarn dev
 ```
 
 This part of the guide focuses on how to render Frames within your application, making the frames interactive and visually integrated. It includes:
-
-<video controls src="https://github.com/fabriguespe/xmtp-quickstart-frames/assets/1447073/adf38f79-703c-4759-8523-4feb0ebb2d0e" width="100%" type="video/mp4">
-Your browser does not support the video tag.
-</video>
 
 - **Validating frame URL**: The validation of frame URLs is performed using a regular expression to identify URLs within the message content. Once a URL is identified, it's processed to extract metadata, including frame information.
 
